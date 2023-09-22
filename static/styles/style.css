@@ -6,6 +6,10 @@
   margin: 0;
 }
 
+:root {
+  --white: #fff;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -75,7 +79,7 @@ button {
 }
 
 .navLinks:hover {
-  color: white;
+  color: var(--white);
   transition: 0.3s;
 }
 
