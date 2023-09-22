@@ -1,0 +1,340 @@
+* {
+  box-sizing: border-box;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+input {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+a {
+  text-decoration: none;
+  color: #2d2d2d;
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.heroSarafan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  max-height: 954px;
+  background: url(../images/bgSarafan.png) 0 0 / cover no-repeat;
+}
+
+.sarafanHeader {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1175px;
+  min-height: 40px;
+  margin-top: 30px;
+}
+
+.headerNavigation {
+  max-width: 416px;
+  max-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks {
+  transition: 0.3s;
+}
+
+.navLinks:hover {
+  color: white;
+  transition: 0.3s;
+}
+
+.headerSearch {
+  max-width: 200px;
+  padding: 0px 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #6f6f6f;
+}
+.headerSearch::before {
+  content: url(../images/ei_search.png);
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.headerSearchInp {
+  background-color: #fffdfd00;
+  font-size: 16px;
+  font-weight: 19.5px;
+}
+
+.headerIcons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 135px;
+}
+
+.icons {
+  cursor: pointer;
+}
+
+.arrowNavigation {
+  max-width: 1444px;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.textAndButtonCatalog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 382px;
+  height: 300px;
+  color: white;
+  margin-left: 60%;
+}
+
+.textSummer {
+  font-size: 25px;
+  line-height: 28.47px;
+  letter-spacing: 1px;
+}
+
+.textWithLove {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 63px;
+  font-weight: 500;
+  line-height: 71.76px;
+  letter-spacing: 1px;
+}
+
+.buttonGoTo {
+  width: 300px;
+  height: 56px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 18.22px;
+  letter-spacing: 1px;
+  color: #2d2d2d;
+  transition: 0.3s;
+}
+
+.buttonGoTo:hover {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.bottomElipce {
+  width: 82px;
+  height: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+@media (min-width: 1600px) {
+  .heroSarafan {
+    width: 100%;
+    height: 954px;
+  }
+  .headerNavigation {
+    width: 100%;
+  }
+  .sarafanHeader {
+    width: 100%;
+  }
+  .headerSearch {
+    width: 100%;
+  }
+  .headerIcons {
+    width: 100%;
+  }
+  .arrowNavigation {
+    width: 100%;
+  }
+  .textAndButtonCatalog {
+    width: 100%;
+  }
+  .headerBurgerMob {
+    display: none;
+  }
+  .headerIconsMob {
+    display: none;
+  }
+}
+
+@media (max-width: 1600px) {
+  .heroSarafan {
+    width: 100%;
+    height: 954px;
+  }
+  .headerNavigation {
+    width: 100%;
+  }
+  .sarafanHeader {
+    width: 100%;
+  }
+  .headerSearch {
+    width: 100%;
+  }
+  .headerIcons {
+    width: 100%;
+  }
+  .arrowNavigation {
+    width: 100%;
+  }
+  .textAndButtonCatalog {
+    width: 100%;
+  }
+  .headerBurgerMob {
+    display: none;
+  }
+  .headerIconsMob {
+    display: none;
+  }
+}
+
+@media (max-width: 1550px) {
+  .textAndButtonCatalog {
+    margin-left: 50%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .textAndButtonCatalog {
+    margin-left: 30%;
+  }
+  .headerSearch {
+    width: 130px;
+  }
+  .headerSearchInp {
+    font-size: 14px;
+  }
+  .headerLogo {
+    width: 135px;
+  }
+  .headerNavigation {
+    width: 300px;
+  }
+  .navLinks {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .textAndButtonCatalog {
+    margin-left: 0px;
+  }
+  .sarafanHeader {
+    padding: 0px 30px;
+  }
+  .headerIcons {
+    width: 110px;
+  }
+  .headerSearch {
+    width: 110px;
+  }
+}
+
+@media (max-width: 660px) {
+  .headerNavigation {
+    display: none;
+  }
+  .headerSearch {
+    display: none;
+  }
+  .headerIcons {
+    display: none;
+  }
+  .sarafanHeader {
+    background-color: white;
+    margin-top: 0px;
+    padding: 0px 0px;
+    height: 60px;
+  }
+  .headerBurgerMob {
+    display: flex;
+    width: 19px;
+    height: 12px;
+  }
+  .headerLogo {
+    width: 115px;
+    height: 54px;
+  }
+  .headerIconsMob {
+    width: 55px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .heroSarafan {
+    height: 100vh;
+    background: url(../images/mobileMilfsvg.svg) 100% 0 / cover no-repeat;
+  }
+  .arrowLeft {
+    display: none;
+  }
+  .arrowRight {
+    display: none;
+  }
+  .bottomElipce {
+    margin-bottom: 35px;
+  }
+  .textAndButtonCatalog {
+    width: 261px;
+    height: 200px;
+    color: #2d2d2d;
+  }
+  .textSummer {
+    font-size: 20px;
+    line-height: 22.78px;
+    letter-spacing: 1px;
+  }
+  .textWithLove {
+    font-size: 43px;
+    font-weight: 500;
+    line-height: 48.98px;
+    letter-spacing: 1px;
+  }
+  .buttonGoTo {
+    width: 210px;
+  }
+}
