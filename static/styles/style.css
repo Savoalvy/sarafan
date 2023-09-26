@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 0 none;
+  border: none;
   outline: 0;
   padding: 0;
   margin: 0;
@@ -8,6 +8,12 @@
 
 :root {
   --white: #fff;
+  --Brown: #2d2d2d;
+  --DarkGray: #fffdfd00;
+  --LightGray: #dcdbdb;
+  --Gray: #e5e5e575;
+  --SearchColor: #6f6f6f;
+  --mobGray: #cecece;
 }
 
 body {
@@ -31,7 +37,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 a {
   text-decoration: none;
-  color: #2d2d2d;
+  color: var(--Brown);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -41,36 +47,40 @@ img {
 }
 
 button {
-  width: 100%;
-  height: 100%;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
+  font-size: 16px;
+  line-height: 18.22px;
+  letter-spacing: 1px;
 }
+
+/* Верстка проекта */
 
 .heroSarafan {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  max-width: 1600px;
-  max-height: 954px;
-  background: url(../images/bgSarafan.png) 0 0 / cover no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
 }
 
 .sarafanHeader {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 1175px;
-  min-height: 40px;
-  margin-top: 30px;
+  width: 1175px;
+  height: 100px;
+  z-index: 1;
 }
 
 .headerNavigation {
-  max-width: 416px;
-  max-height: 20px;
+  width: 416px;
+  height: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -83,13 +93,18 @@ button {
   transition: 0.3s;
 }
 
+.headerLogo {
+  width: 182px;
+  height: 86px;
+}
+
 .headerSearch {
-  max-width: 200px;
+  width: 200px;
   padding: 0px 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid #6f6f6f;
+  border-bottom: 1px solid var(--SearchColor);
 }
 .headerSearch::before {
   content: url(../images/ei_search.png);
@@ -98,7 +113,7 @@ button {
 }
 
 .headerSearchInp {
-  background-color: #fffdfd00;
+  background-color: var(--DarkGray);
   font-size: 16px;
   font-weight: 19.5px;
 }
@@ -107,30 +122,63 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 135px;
+  width: 135px;
 }
 
 .icons {
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.icons:hover path {
+  fill: var(--white);
+  transition: 0.3s;
+}
+
+.slider {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bgSarafan.png) 0 0 / cover no-repeat;
+  z-index: -1;
 }
 
 .arrowNavigation {
-  max-width: 1444px;
-  height: 80%;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
+  padding: 0px 60px;
 }
 
-.textAndButtonCatalog {
+.left {
+  transform: scaleX(-1);
+}
+
+.arrow {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow:hover path {
+  fill: var(--Brown);
+  transition: 0.3s;
+}
+
+.sliderContent {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  max-width: 382px;
+  width: 382px;
   height: 300px;
-  color: white;
-  margin-left: 60%;
+  color: var(--white);
+  z-index: 2;
+  margin-right: 12%;
 }
 
 .textSummer {
@@ -151,148 +199,126 @@ button {
 .buttonGoTo {
   width: 300px;
   height: 56px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  line-height: 18.22px;
-  letter-spacing: 1px;
-  color: #2d2d2d;
+  color: var(--Brown);
   transition: 0.3s;
 }
 
 .buttonGoTo:hover {
-  background-color: #2d2d2d;
-  color: #ffffff;
+  background-color: var(--Brown);
+  color: var(--white);
   transition: 0.3s;
 }
 
-.bottomElipce {
+.bottomBullet {
   width: 82px;
-  height: 13px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 80px;
 }
 
-@media (min-width: 1600px) {
-  .heroSarafan {
-    width: 100%;
-    height: 954px;
-  }
-  .headerNavigation {
-    width: 100%;
-  }
+.bullet {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: var(--Gray);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bullet:hover {
+  background-color: var(--LightGray);
+  transition: 0.3s;
+}
+
+.headerBurgerMob {
+  display: none;
+}
+
+@media (max-width: 1200px) {
   .sarafanHeader {
-    width: 100%;
-  }
-  .headerSearch {
-    width: 100%;
-  }
-  .headerIcons {
-    width: 100%;
-  }
-  .arrowNavigation {
-    width: 100%;
-  }
-  .textAndButtonCatalog {
-    width: 100%;
-  }
-  .headerBurgerMob {
-    display: none;
-  }
-  .headerIconsMob {
-    display: none;
-  }
-}
-
-@media (max-width: 1600px) {
-  .heroSarafan {
-    width: 100%;
-    height: 954px;
-  }
-  .headerNavigation {
-    width: 100%;
-  }
-  .sarafanHeader {
-    width: 100%;
-  }
-  .headerSearch {
-    width: 100%;
-  }
-  .headerIcons {
-    width: 100%;
-  }
-  .arrowNavigation {
-    width: 100%;
-  }
-  .textAndButtonCatalog {
-    width: 100%;
-  }
-  .headerBurgerMob {
-    display: none;
-  }
-  .headerIconsMob {
-    display: none;
-  }
-}
-
-@media (max-width: 1550px) {
-  .textAndButtonCatalog {
-    margin-left: 50%;
+    width: 1000px;
   }
 }
 
 @media (max-width: 1024px) {
-  .textAndButtonCatalog {
-    margin-left: 30%;
+  .sarafanHeader {
+    width: 900px;
   }
   .headerSearch {
-    width: 130px;
+    width: 110px;
   }
-  .headerSearchInp {
-    font-size: 14px;
+  .headerNavigation {
+    width: 350px;
+  }
+}
+
+@media (max-width: 900px), (max-height: 450px) {
+  .sarafanHeader {
+    width: 800px;
+  }
+  .slider {
+    justify-content: center;
+  }
+  .sliderContent {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 824px) {
+  .sarafanHeader {
+    width: 660px;
+  }
+  .headerNavigation {
+    width: 310px;
   }
   .headerLogo {
-    width: 135px;
-  }
-  .headerNavigation {
-    width: 300px;
-  }
-  .navLinks {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .textAndButtonCatalog {
-    margin-left: 0px;
-  }
-  .sarafanHeader {
-    padding: 0px 30px;
-  }
-  .headerIcons {
-    width: 110px;
-  }
-  .headerSearch {
-    width: 110px;
-  }
-}
-
-@media (max-width: 660px) {
-  .headerNavigation {
-    display: none;
-  }
-  .headerSearch {
-    display: none;
-  }
-  .headerIcons {
-    display: none;
-  }
-  .sarafanHeader {
-    background-color: white;
-    margin-top: 0px;
-    padding: 0px 0px;
+    width: 130px;
     height: 60px;
+  }
+  .headerIcons {
+    width: 100px;
+  }
+  .icons {
+    width: 25px;
+    height: 25px;
+  }
+  .Profile {
+    width: 31px;
+    height: 31px;
+  }
+}
+
+@media (max-width: 660px), (max-height: 450px) {
+  .headerNavigation {
+    display: none;
+  }
+  .headerSearch {
+    display: none;
+  }
+
+  .headerIcons {
+    flex-direction: row-reverse;
+    width: 60px;
+  }
+
+  .like {
+    display: none;
+  }
+
+  .icons path {
+    fill: var(--mobGray);
+  }
+
+  .icons:hover path {
+    fill: var(--Brown);
+    transition: 0.3s;
+  }
+
+  .sarafanHeader {
+    width: 100%;
+    height: 60px;
+    background-color: var(--white);
   }
   .headerBurgerMob {
     display: flex;
@@ -300,45 +326,54 @@ button {
     height: 12px;
   }
   .headerLogo {
-    width: 115px;
-    height: 54px;
+    width: 140px;
+    height: 70px;
   }
-  .headerIconsMob {
-    width: 55px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .heroSarafan {
+  .slider {
+    background: url(../images/mobileMilfsvg.svg) 100% 0% / cover no-repeat;
     height: 100vh;
-    background: url(../images/mobileMilfsvg.svg) 100% 0 / cover no-repeat;
+    margin-top: 10px;
+    justify-content: center;
   }
-  .arrowLeft {
+
+  .arrowNavigation {
     display: none;
   }
-  .arrowRight {
-    display: none;
-  }
-  .bottomElipce {
-    margin-bottom: 35px;
-  }
-  .textAndButtonCatalog {
+  .sliderContent {
     width: 261px;
     height: 200px;
-    color: #2d2d2d;
+    color: var(--Brown);
   }
   .textSummer {
     font-size: 20px;
     line-height: 22.78px;
-    letter-spacing: 1px;
   }
   .textWithLove {
     font-size: 43px;
     font-weight: 500;
     line-height: 48.98px;
-    letter-spacing: 1px;
   }
   .buttonGoTo {
     width: 210px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sarafanHeader {
+    height: 50px;
+  }
+
+  .headerLogo {
+    width: 110px;
+    height: 50px;
+  }
+
+  .icons {
+    width: 19px;
+    height: 19px;
+  }
+  .Profile {
+    width: 24px;
+    height: 24px;
   }
 }
