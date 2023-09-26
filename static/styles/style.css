@@ -289,6 +289,50 @@ button {
   }
 }
 
+@media (max-width: 660px) {
+  .headerNavigation {
+    display: none;
+  }
+  .headerSearch {
+    display: none;
+  }
+
+  .headerIcons {
+    flex-direction: row-reverse;
+    width: 60px;
+  }
+
+  .like {
+    display: none;
+  }
+
+  .icons path {
+    fill: var(--mobGray);
+  }
+
+  .icons:hover path {
+    fill: var(--Brown);
+    transition: 0.3s;
+  }
+
+  .sarafanHeader {
+    width: 100%;
+    height: 60px;
+    background-color: var(--white);
+  }
+  .headerIcons {
+    width: 100px;
+  }
+  .icons {
+    width: 25px;
+    height: 25px;
+  }
+  .Profile {
+    width: 31px;
+    height: 31px;
+  }
+}
+
 @media (max-width: 660px), (max-height: 450px) {
   .headerNavigation {
     display: none;
