@@ -435,11 +435,23 @@ button {
 
 .tittleBlok {
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   width: 100%;
   height: 8%;
   font-size: 25px;
   line-height: 28.47px;
+}
+.more {
+  display: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.more::after {
+  content: url(../images/ep_arrow-left.svg);
+  padding-top: 2px;
+  padding-left: 2px;
 }
 
 .collectionContent {
@@ -555,6 +567,11 @@ button {
 }
 
 @media (max-width: 660px) {
+  .more {
+    display: flex;
+    font-size: 12px;
+  }
+
   .infoPrice {
     font-size: 11px;
   }
